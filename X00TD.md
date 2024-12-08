@@ -106,6 +106,8 @@ echo "reboot"
 fastboot oem recovery_and_reboot
 ```
 
+ℹ️ Note: if you are getting an error **Write to device failed (Cannot send after transport endpoint shutdown)** you may need to plug your phone into a USB 2.0 port, not USB 3.0. You can tell if it's a USB 3.0 port if it has a color blue in it or has a label "SS".
+
 On success of the various flashing steps, terminal output should feature content like the following:
 
 ```Bash
@@ -181,8 +183,9 @@ Transfer the LineageOS ZIP file to the device internal storage while TWRP is run
 ```Bash
 sudo adb sideload lineage-15.1-20190103-nightly-X00TD-signed.zip
 ```
-
 - Install > lineage-15.1-20190103-nightly-X00TD-signed.zip > Swipe to confirm Flash
+
+ℹ️ Note: if `adb sideload` doesn't work, you can just manually push the file into the tmp/ directory: `sudo adb push lineage-15.1-20190103-nightly-X00TD-signed.zip /tmp`
 
 ## install F-Droid
 
